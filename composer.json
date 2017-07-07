@@ -15,15 +15,7 @@
             "role": "Developer"
         }
     ],
-    "require": {
-        "illuminate/support": "~5.1",
-        "php" : "~5.4|~7.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit" : "~4.0||~5.0||~6.0",
-        "squizlabs/php_codesniffer": "^2.3"
-    },
-    "autoload": {
+        "autoload": {
         "psr-4": {
             "mxm\\sso\\": "src"
         }
@@ -34,7 +26,4 @@
         }
     },
     "minimum-stability": "beta",
-    "config": {
-        "sort-packages": true
-    }
 }
