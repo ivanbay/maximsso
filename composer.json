@@ -25,5 +25,5 @@
             "mxm\\sso\\": "tests"
         }
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "beta"
 }
