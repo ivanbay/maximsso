@@ -1,0 +1,13 @@
+{
+    "name": "maxim/sso",
+    "description": "Maxim SSO login package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Paul Bay",
+            "email": "ivan.bay@maximintegrated.com"
+        }
+    ],
+    "require": {}
+}
