@@ -6,15 +6,15 @@ Note: Exclusive for Maxim developers only.
 
 ### Requirements
 
-PHP >= 5.4  
-Laravel >= 5.2  
-PHP nusoap library  
+PHP >= 5.4<br />
+Laravel >= 5.2<br />
+PHP nusoap library<br />
 
 
 ### Author
-Name: Ivan Paul Bay  
-Email: ivan.bay@maximintegrated.com  
-Personal Email: bayivanpaul@gmail.com  
+Name: Ivan Paul Bay<br />
+Email: ivan.bay@maximintegrated.com<br />
+Personal Email: bayivanpaul@gmail.com<br />
 
 
 
