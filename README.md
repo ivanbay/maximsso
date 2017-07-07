@@ -11,4 +11,11 @@ Laravel >= 5.2
 PHP nusoap library
 
 
+### Author
+Name: Ivan Paul Bay
+Email: ivan.bay@maximintegrated.com
+Personal Email: bayivanpaul@gmail.com
+
+
+
 
