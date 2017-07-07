@@ -1,13 +1,50 @@
 {
-    "name": "maxim/sso",
-    "description": "Maxim SSO login package",
+    "name": "mxm/sso",
     "type": "library",
+    "description": "Maxim SSO Login laravel package",
+    "keywords": [
+        "mxm",
+        "sso"
+    ],
+    "homepage": "https://github.com/mxm/sso",
     "license": "MIT",
     "authors": [
         {
             "name": "Ivan Paul Bay",
-            "email": "ivan.bay@maximintegrated.com"
+            "email": "aiipee05@gmail.com",
+            "homepage": ":author_website",
+            "role": "Developer"
         }
     ],
-    "require": {}
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : "~5.6|~7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~4.0||~5.0||~6.0",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "mxm\\sso\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "mxm\\sso\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
 }
