@@ -37,7 +37,7 @@ class ssoServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('Maxim\SSO\controllers\SSOController');
+        $this->app->make('mxm\sso\controllers\SSOController');
         
         $this->mergeConfigFrom(__DIR__.'/config/sso.php', 'sso');
     }
