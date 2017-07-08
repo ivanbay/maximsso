@@ -25,5 +25,9 @@
             "mxm\\sso\\": "tests"
         }
     },
-    "minimum-stability" : "beta"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
 }
