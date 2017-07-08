@@ -8,8 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
-use Maxim\SSO\classes\nusoap\lib\nusoap_client as nusoap;
-use Maxim\SSO\models\Users;
+use mxm\sso\classes\nusoap\lib\nusoap_client as nusoap;
+use mxm\sso\models\Users;
 
 class SSOController extends Controller {
 
@@ -39,16 +39,19 @@ class SSOController extends Controller {
 
         if ($this->hasAccess($data['employeeno'])) {
             $request->session()->put("SSOID", $authid);
-            $request->session()->put("resource_id", $data['resource_id']);
-            $request->session()->put("username", $data['username']);
-            $request->session()->put("employeeno", $data['employeeno']);
-            $request->session()->put("employeename", $data['employeename']);
+            foreach(config("sso.session_attributes") as $k => $v) {
+                $request->session()->put($k, $data[$v]);
+            }
             $request->session()->put("userrole", $this->getUserRole($data['employeeno']));
             return redirect(config("sso.redirect_url"));
         } else {
 
-            $request->session()->put("employeeno", $data['employeeno']);
-            $request->session()->put("username", $data['username']);
+//            $request->session()->put("employeeno", $data['employeeno']);
+//            $request->session()->put("username", $data['username']);
+            
+            foreach(config("sso.unauthorize_session_attributes") as $k => $v) {
+                $request->session()->put($k, $data[$v]);
+            }
 
             return redirect()->to("login/unauthorize");
         }

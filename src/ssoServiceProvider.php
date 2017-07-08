@@ -4,44 +4,41 @@ namespace mxm\sso;
 
 use Illuminate\Support\ServiceProvider;
 
-class ssoServiceProvider extends ServiceProvider {
-
+class ssoServiceProvider extends ServiceProvider
+{
     /**
      * Perform post-registration booting of services.
      *
      * @return void
      */
-    public function boot() {
-        //
-        include __DIR__ . '/routes.php';
-//        $this->loadRoutesFrom(__DIR__.'/routes.php');
-
-        $this->loadViewsFrom(__DIR__ . '/views', 'SSO');
-//        $this->loadMigrationsFrom(__DIR__.'/Migrations');
-
+    public function boot()
+    {
+        include __DIR__.'/routes.php';
+        
+        $this->loadViewsFrom(__DIR__.'/views', 'SSO');
+        
         $this->publishes([
-            __DIR__ . '/config/sso.php' => config_path('sso.php')
-                ], 'config');
-
+            __DIR__.'/config/sso.php' => config_path('sso.php')
+        ], 'config');
+        
         $this->publishes([
-            __DIR__ . '/views' => resource_path('views/vendor/sso')
-                ], 'views');
-
+            __DIR__.'/views' => resource_path('views/vendor/sso')
+        ], 'views');
+        
         $this->publishes([
-            __DIR__ . '/migrations' => database_path('migrations')
-                ], 'migrations');
+           __DIR__.'/migrations' => database_path('migrations') 
+        ], 'migrations');
     }
 
     /**
-     * Register the application services.
+     * Register any package services.
      *
      * @return void
      */
-    public function register() {
-        //
-        $this->app->make('mxm\sso\controllers\SSOController');
-
-        $this->mergeConfigFrom(__DIR__ . '/config/sso.php', 'sso');
+    public function register()
+    {
+        $this->app->make('Maxim\SSO\controllers\SSOController');
+        
+        $this->mergeConfigFrom(__DIR__.'/config/sso.php', 'sso');
     }
-    
 }
