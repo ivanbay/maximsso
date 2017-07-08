@@ -3,16 +3,75 @@
 
 return [
   
+    /*
+    |--------------------------------------------------------------------------
+    | Application Title
+    |--------------------------------------------------------------------------
+    |
+    | Application title to be use on login page.
+    |
+    */
+    
     'app_title' => "Support Performance Metric" ,
+    
+    
+    
+    /*
+    |--------------------------------------------------------------------------
+    | URL/Callback Function for login validation
+    |--------------------------------------------------------------------------
+    |
+    | Method to be called or redirect link for login validation.
+    | APP_URL from .env file should be updated with application's base url 
+    | and it will be suffixes by /login/success - this is by default and
+    | do not replace.
+    |
+    */    
     
     'callback_url' => env("APP_URL", "http://localhost") . "/login/success",
 
-    // redirect URL when the user is logged in
+    
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Redirect URL after successful login
+    |--------------------------------------------------------------------------
+    |
+    | Link to go to after logging in successfully.
+    |
+    */     
+    
     'redirect_url' => "home",
+    
+    
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Maxim's SSO web service link
+    |--------------------------------------------------------------------------
+    |
+    | SSO web service server URL to use for logging in. 
+    | Update this section if WS URL is replaced.
+    |
+    */ 
     
     'sso_ws_url' => 'http://ds2.maxim-ic.com/singlesignon/userauth.php',
     
+    
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Database table for users
+    |--------------------------------------------------------------------------
+    |
+    | Table that will keep users information. You can rename the table and 
+    | add fields but do not replace or remove the existing fields.
+    |
+    */  
+    
     'sso_users_table' => 'appusers',
+    
+    
     
     /*
     |--------------------------------------------------------------------------
@@ -29,12 +88,14 @@ return [
     | value = attribute from web service return
     |
     */
+    
     'session_attributes' => [
         'resource_id' => 'resource_id',
         'username' => 'username',
         'employeeno' => 'employeeno',
         'employeename' => 'employeename'
     ],
+    
     
     
     /*
